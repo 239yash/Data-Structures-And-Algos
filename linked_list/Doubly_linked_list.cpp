@@ -79,8 +79,9 @@ node* insert_before_node(node * head, int key, int value)
 
     temp -> prev = curr;
     temp -> next = curr -> next;
-    curr -> next = temp;
     curr -> next -> prev = temp;
+    curr -> next = temp;
+    
 
     return head;
 }
@@ -115,8 +116,9 @@ node* insert_after_node(node* head, int key, int value)
     // If the node with value is the normal node in between of linked list.
     temp -> prev = curr;
     temp -> next = curr -> next;
-    curr -> next = temp;
     curr -> next -> prev = temp;
+    curr -> next = temp;
+    
 
     return head;
 
