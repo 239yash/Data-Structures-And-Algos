@@ -45,7 +45,7 @@ node * sorted_list(node * head1, node * head2)
     return(a);
 
     if(a -> key < b -> key )
-    {
+    { 
         head = a;
         tail = a;
         a = a-> next;
