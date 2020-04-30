@@ -15,7 +15,7 @@ struct node{
 };
 
 int res = INT_MAX;
-node * BST_floor( node * root, int key)
+node * BST_ceil( node * root, int key)
 {
     if(root -> key > key)
     {
@@ -65,7 +65,7 @@ int main()
     root -> right -> left = new node(18);
     root -> right -> left -> left = new node(16);
     root -> right -> right = new node(80);
-    root = BST_floor(root, 16);
+    root = BST_ceil(root, 16);
 
     cout<<res;
 
