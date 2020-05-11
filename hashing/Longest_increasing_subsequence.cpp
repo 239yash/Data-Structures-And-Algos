@@ -9,16 +9,15 @@ int longest_increasing( int arr[], int n)
 
     for(int i = 0; i < n-1; i++)
     {
+
         if(arr[i] < arr[i + 1])
         {
             longest_curr ++;
         }
-        else
+
+        if( longest_far < longest_curr)
         {
-            if( longest_far < longest_curr)
-            {
-                longest_far = longest_curr;
-            }
+            longest_far = longest_curr;
         }
         
     }
@@ -27,8 +26,9 @@ int longest_increasing( int arr[], int n)
 
 int main()
 {
-    int arr[] = {10,9,2,5,3,7,101,18};
-    int n = 8;
+    int arr[] = {50, 3, 10, 7, 40, 80};
+    int n = 6;
     int res = longest_increasing(arr,n);
     cout<<res;
 }
+
