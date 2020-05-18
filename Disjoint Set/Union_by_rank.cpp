@@ -54,13 +54,13 @@ void union_set(int x, int y)
     if(rank_arr[x_rep] < rank_arr[y_rep])
     {
         parent[x_rep] = y_rep;
-        rank_arr[y_rep]++;
+
     }
     // If rank of x_rep is greater than y_rep.
     else if(rank_arr[y_rep] < rank_arr[x_rep])
     {
         parent[y_rep] = x_rep;
-        rank_arr[x_rep]++;
+
     }
     // If the ranks are same.
     else
