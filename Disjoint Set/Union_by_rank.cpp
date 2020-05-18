@@ -5,7 +5,7 @@ using namespace std;
 int find_parent(int);
 
 // Declaring the array size and declaring parent array of n size.
-const int n = 5;
+const int n = 10;
 int parent[n];
 int rank_arr[n];
 
@@ -54,11 +54,13 @@ void union_set(int x, int y)
     if(rank_arr[x_rep] < rank_arr[y_rep])
     {
         parent[x_rep] = y_rep;
+        rank_arr[y_rep]++;
     }
     // If rank of x_rep is greater than y_rep.
     else if(rank_arr[y_rep] < rank_arr[x_rep])
     {
         parent[y_rep] = x_rep;
+        rank_arr[x_rep]++;
     }
     // If the ranks are same.
     else
@@ -74,6 +76,10 @@ int main()
     initialize();
     union_set(3,4);
     union_set(3,2);
+    union_set(6,7);
+    union_set(7,8);
+    union_set(8,9);
+    union_set(3,6);
 
     for(int i = 0; i < n; i++)
     {
