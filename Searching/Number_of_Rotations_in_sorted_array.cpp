@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
     int a[] = {12,15,18,2,5,6,8,11};
+    // this array has been sorted by 5
     int n  = 8;
     
     int start = 0;
