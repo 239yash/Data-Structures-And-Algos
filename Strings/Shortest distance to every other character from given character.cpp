@@ -37,10 +37,10 @@ int main()
     int prev;
     int next;
     
-    for(auto h: a){
-        cout<<h<<" ";
-    }
-    cout<<endl;
+    // for(auto h: a){
+    //     cout<<h<<" ";
+    // }
+    // cout<<endl;
     
     for(int i = first; i < last; i++)
     {
@@ -60,22 +60,22 @@ int main()
         if(i>mid){a.push_back(next-i);continue;}
     }
     
-    for(auto h: a){
-        cout<<h<<" ";
-    }
-    cout<<endl;
+    // for(auto h: a){
+    //     cout<<h<<" ";
+    // }
+    // cout<<endl;
     
     for(int i = last; i < n; i++)
     {
         a.push_back(i-last);
     }
     
-    for(auto h: a){
-        cout<<h<<" ";
-    }
-    cout<<endl;
+    // for(auto h: a){
+    //     cout<<h<<" ";
+    // }
+    // cout<<endl;
     
-    cout<<n<<endl;
+    // cout<<n<<endl;
     for(auto h: a){
         cout<<h<<" ";
     }
