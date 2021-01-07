@@ -10,7 +10,7 @@ long long perfectSum(int arr[], int n, int sum)
                 if(i == 0)
                     dp[i][j] = 0;
                 if(j == 0)
-                    dp[i][j] = 0;
+                    dp[i][j] = 1;
             }
         }
         
@@ -20,7 +20,7 @@ long long perfectSum(int arr[], int n, int sum)
             {
                 if(arr[i-1] <= j)
                 {
-                    dp[i][j] = max((dp[i-1][j - arr[i-1]] + 1)%MOD, dp[i-1][j]%MOD);
+                    dp[i][j] = ((dp[i-1][j - arr[i-1]])%MOD + dp[i-1][j]%MOD)%MOD;
                 }
                 else
                 {
@@ -29,13 +29,13 @@ long long perfectSum(int arr[], int n, int sum)
             }
         }
         
-        for(long long i = 0; i < n+1; i++)
-        {
-            for(long long j = 0; j < sum+1; j++)
-            {
-                cout<<dp[i][j]<<" ";
-            }
-            cout<<endl;
-        }
+        // for(long long i = 0; i < n+1; i++)
+        // {
+        //     for(long long j = 0; j < sum+1; j++)
+        //     {
+        //         cout<<dp[i][j]<<" ";
+        //     }
+        //     cout<<endl;
+        // }
         return dp[n][sum]%MOD;
 	}
