@@ -25,8 +25,9 @@ int solve(int arr[], int i, int j)
     for(int k = i; k <= j-1; k++)
     {
         temp = solve(arr, i, k) + solve(arr, k+1, j) + (arr[i-1] * arr[k] * arr[j]);
+        mini = min(mini, temp);
     }
-    mini = min(mini, temp);
+    
     return mini;
 }
 
