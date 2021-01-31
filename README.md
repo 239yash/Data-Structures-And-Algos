@@ -1,1 +1,1 @@
-# Data structures via cpp practice
+# Data structures via Cpp (practice)
