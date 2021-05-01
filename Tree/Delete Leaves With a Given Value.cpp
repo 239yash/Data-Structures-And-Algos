@@ -24,6 +24,7 @@ public:
         if(root == nullptr)
             return false;
         
+        // check, if the node is leave node or not
         if(root -> left == nullptr && root -> right == nullptr && root -> val == target)
             return true;
         
@@ -33,9 +34,17 @@ public:
         bool re = func(root -> right, target);
         if(re) root -> right = nullptr;
         
+        // After removing the leaf node, new leaf node will be generated
+        // If the newly gen leaf node also satisfies the condition
+        // We have to remove that also
         if(root -> left == nullptr && root -> right == nullptr && root -> val == target)
             return true;
         else
             return false;
     }
 };
+
+/*
+Author - Yash Gupta
+Leetcode - https://leetcode.com/problems/delete-leaves-with-a-given-value/
+*/
