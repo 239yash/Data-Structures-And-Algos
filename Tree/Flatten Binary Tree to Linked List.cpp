@@ -29,10 +29,7 @@ public:
             }
             temp -> right = rightPart;
             root -> right = leftPart;
-        } else {
-            root -> right = rightPart;
         }
-        
         root -> left = NULL; // Making root's left NULL, as we have to flatten the tree
         return root;
     }
