@@ -20,24 +20,25 @@ void lvl_order_line(node * root)
 
     std::queue<node *> q;
     q.push(root);
+    q.push(NULL);
 
-    int count = 0;
-    while( q.empty() == false)
+    while( q.size() > 1)
     {
-        count = q.size();
-        for( int i = 0; i < count; i++)
+        node * curr = q.front();
+        q.pop();
+
+        if( curr == NULL)
         {
-            node * curr = q.front();
-            q.pop();
-            cout<<curr -> key<<" ";
-
-            if(curr -> left != NULL)
-            q.push(curr-> left);
-
-            if(curr -> right != NULL)
-            q.push(curr -> right);
+            cout<<"\n";
+            q.push(NULL);
+            continue;
         }
-        cout<<"\n";
+        cout<< curr -> key <<" ";
+        if( curr -> left != NULL)
+        q.push(curr -> left);
+
+        if( curr -> right != NULL)
+        q.push(curr -> right);
     }
 }
 
