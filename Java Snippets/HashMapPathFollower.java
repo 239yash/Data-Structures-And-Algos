@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class HashMapPathFollower {
   public static void main(String[] args) {
         int c = 12;
         HashMap b = new HashMap();

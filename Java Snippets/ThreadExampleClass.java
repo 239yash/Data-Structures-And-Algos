@@ -1,4 +1,4 @@
-public class Example {
+public class ThreadExampleClass {
     public static class ThreadExample extends Thread {
         int count = 0;
         public void run() {
