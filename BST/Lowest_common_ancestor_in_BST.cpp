@@ -1,60 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
-//void path_vector(int, int);
-//void path_vec(node, int, int);
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
 
-struct node
-{
-    int key;
-    node *left;
-    node *right;
-    node(int x)
-    {
-        key = x;
-        left = NULL;
-        right = NULL;
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        return lca(root, p, q);
+    }
+    
+    TreeNode* lca(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root) return NULL;
+        if (root -> val == p -> val) return p;
+        if (root -> val == q -> val) return q;
+        
+        TreeNode* left = lca(root -> left, p, q);
+        TreeNode* right = lca(root -> right, p, q);
+        if (left && right) return root;
+        if (left) return left;
+        return right;
     }
 };
-
-void path_vector(node *root, int x, int y)
-{
-
-    if (root == NULL)
-    {
-        cout << "No LCA";
-        return;
-    }
-    while (true)
-    {
-        if (root->key < x && root->key < y)
-        {
-            root = root->right;
-        }
-        else if (root->key > x && root->key > y)
-        {
-            root = root->left;
-        }
-        else
-        {
-            break;
-        }
-    }
-
-    cout << root->key;
-}
-
-int main()
-{
-    node *root = NULL;
-    root = new node(50);
-    root->left = new node(20);
-    root->left->left = new node(10);
-    root->left->right = new node(30);
-    root->left->right->right = new node(35);
-    root->left->right->left = new node(25);
-    root->right = new node(60);
-    root->right->right = new node(65);
-    root->right->left = new node(55);
-    root->right->right->right = new node(70);
-    path_vector(root, 55, 60);
-}
