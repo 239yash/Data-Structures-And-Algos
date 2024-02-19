@@ -17,6 +17,5 @@ public:
         func(nums, index + 1, temp);
         temp.push_back(nums[index]);
         func(nums, index + 1, temp);
-        temp.pop_back();
     }
 };
